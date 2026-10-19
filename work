@@ -1,1 +1,26 @@
+# TEMPORARY PRODUCTION DIAGNOSTICS
+import hashlib
+import logging
 
+logger = logging.getLogger(__name__)
+
+dataset_fingerprint = hashlib.sha256(
+    df_json.encode("utf-8")
+).hexdigest()[:12]
+
+logger.warning(
+    "[AI_DIAGNOSTIC] rows=%s | cols=%s | "
+    "fingerprint=%s | column_names=%s",
+    len(df),
+    len(df.columns),
+    dataset_fingerprint,
+    df.columns.tolist()
+)
+
+logger.warning(
+    "[AI_DIAGNOSTIC] profiles_type=%s | "
+    "profiles_count=%s | objective=%s",
+    type(profiles).__name__,
+    len(profiles) if isinstance(profiles, dict) else None,
+    bool(objective)
+)
