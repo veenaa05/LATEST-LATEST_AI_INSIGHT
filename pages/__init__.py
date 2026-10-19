@@ -1,0 +1,4 @@
+"""Pages package for multi-page dashboard"""
+# Import all page modules
+from pages import page_upload,page_data_review, page_config, page_dashboard,  page_user_login, page_admin_login, page_admin_dashboard, page_users, page_companies, page_user_company, page_portal
+__all__ = ['page_upload', 'page_data_review', 'page_config', 'page_dashboard', 'page_user_login', 'page_admin_login', 'page_admin_dashboard', 'page_users', 'page_companies', 'page_user_company', 'page_portal']
